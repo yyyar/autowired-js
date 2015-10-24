@@ -67,5 +67,17 @@ module.exports = {
             test.done();
 
         });
+    },
+
+    unresolvedBean: (test) => {
+
+        console.log('-- Start scanning');
+
+        new Autowired('App').scan(__dirname + '/beans-unresolved', (err, context) => {
+
+            test.ok(err, 'Have error ' + err);
+            test.done();
+
+        });
     }
 };
