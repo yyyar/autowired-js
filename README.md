@@ -43,6 +43,7 @@ module.exports = class MyBean2 {
     }
 
 };
+```
 
 Initialize Context, scan for beans and use it.
 
