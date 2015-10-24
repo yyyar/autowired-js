@@ -1,0 +1,37 @@
+{
+  "name": "autowired-js",
+  "description": "IoC library for ES2015 classes inspired by Spring Framework IoC",
+  "version": "0.0.1",
+  "author": {
+    "name": "Yaroslav Pogrebnyak",
+    "url": "http://pogrebnyak.info",
+    "email": "yyyaroslav@gmail.com"
+  },
+  "homepage": "http://github.com/yyyar/autowired-js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yyyar/autowired-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yyyar/autowired-js/issues"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "license": "MIT",
+  "main": "./lib/autowired",
+  "scripts": {
+    "test": "nodeunit tests --reporter verbose"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "async": "^1.4.2",
+    "esprima": "^2.6.0",
+    "estraverse": "^4.1.0",
+    "lodash": "^3.10.1",
+    "recursive-readdir": "^1.2.1"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  }
+}
