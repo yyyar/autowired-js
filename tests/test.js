@@ -6,7 +6,8 @@
 
 'use strict';
 
-var Autowired = require('../lib/autowired');
+const _ = require('lodash'),
+      Autowired = require('../lib/autowired');
 
 module.exports = {
 
@@ -69,6 +70,18 @@ module.exports = {
         });
     },
 
+    brokenBean2: (test) => {
+
+        console.log('-- Start scanning');
+
+        new Autowired('App').scan(__dirname + '/beans-broken2', (err, context) => {
+
+            test.ok(err, 'Have error ' + err);
+            test.done();
+
+        });
+    },
+
     unresolvedBean: (test) => {
 
         console.log('-- Start scanning');
@@ -76,6 +89,19 @@ module.exports = {
         new Autowired('App').scan(__dirname + '/beans-unresolved', (err, context) => {
 
             test.ok(err, 'Have error ' + err);
+            test.done();
+
+        });
+    },
+
+
+    badfilesBean: (test) => {
+
+        console.log('-- Start scanning');
+
+        new Autowired('App').scan(__dirname + '/beans-badfiles', (err, context) => {
+
+            test.ok(_.isNull(err) , 'No errors');
             test.done();
 
         });

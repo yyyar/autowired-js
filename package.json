@@ -1,7 +1,7 @@
 {
   "name": "autowired-js",
   "description": "IoC library for ES2015 classes inspired by Spring Framework IoC",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Yaroslav Pogrebnyak",
     "url": "http://pogrebnyak.info",

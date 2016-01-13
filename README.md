@@ -51,7 +51,13 @@ Initialize Context, scan for beans and use it.
 ```javascript
 var Autowired = require('autowired-js');
 
-new Autowired('app').scan(__dirname, (err, context) => {
+new Autowired('app', {
+    /* optional config */
+   'scan' : {
+        'include': [/.+\.js$/], // array of regexps of files to parse
+        'exclude' : ['node_modules']  // array of strings dirs to exclude
+    }
+}).scan(__dirname, (err, context) => {
 
     if (err) {
         return console.log(err);
