@@ -106,4 +106,22 @@ module.exports = {
 
         });
     },
+
+    /**
+     * When bean wants $context and then use
+     * it to get another still not initialized bean with $context.getBean,
+     * it should not fail. So when bean depends on $context, it should
+     * wait until all other beans gets initialized and then call afterPropertiesSet method
+     */
+    autowiringContext: (test) => {
+
+        console.log('-- Start scanning');
+
+        new Autowired('App').scan(__dirname + '/beans-autowiringcontext', (err, context) => {
+
+            test.ok(_.isNull(err) , 'No errors');
+            test.done();
+
+        });
+    },
 };
