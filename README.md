@@ -63,7 +63,7 @@ new Autowired('app', {
         return console.log(err);
     }
 
-    app.getBean('myBean2').doWork();
+    app.getBean('myBean2').doWork();  // or use shortcut - app.get('myBean2')
 
     context.shutdown(() => {
         console.log('Context shutdown completed');

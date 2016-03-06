@@ -24,6 +24,7 @@ module.exports = {
              console.log('-- Context initialize done');
 
              context.getBean('Bean').doWork();
+             context.get('Bean').doWork();
 
              console.log('-- Shutting down');
 
